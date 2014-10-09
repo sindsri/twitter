@@ -9,6 +9,7 @@
                 <outlet property="tweetHandle" destination="Wpc-1p-dUk" id="Q7z-dn-FLX"/>
                 <outlet property="tweetImageView" destination="W7c-LO-Y7T" id="1WZ-4r-xWy"/>
                 <outlet property="tweetName" destination="Myy-6B-G7I" id="tc2-d2-8pk"/>
+                <outlet property="tweetTextInput" destination="DT7-PZ-Oz6" id="UN8-0D-rkS"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
