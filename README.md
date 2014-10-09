@@ -2,7 +2,7 @@ twitter
 =======
 iOS 7 Twitter client. This app allows you to view the twitter timeline.
 
-Time spent: 15 hours
+Time spent: 25 hours
 
 Completed user stories
 -
@@ -16,6 +16,7 @@ Completed user stories
  * [X] User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
  * [X] In the home timeline, user can view tweet with the user profile picture, username, tweet text, and timestamp. 
  * [X] TODO ---- design the custom cell with the properAuto Layout settings
+ * [X] Optional: After creating a new tweet, a user should be able to view it in the timeline immediately without refetching the         timeline from the network.
 
 
 
