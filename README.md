@@ -21,5 +21,5 @@ Completed user stories
 
 Walkthrough
 -
-![Demo](twitter.gif)
+![Demo](twitter .gif)
 
