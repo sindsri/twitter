@@ -7,12 +7,39 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
+#import "TwitterClient.h"
+#import "User.h"
+#import "Tweet.h"
+#import "TweetsViewController.h"
+#import "TweetTimelineViewController.h"
+
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(userDidLogout) name:UserDidLogoutNotification object:nil];
+    
+    User *user = [User currentUser];
+    if( user != nil) {
+        NSLog(@"Welcome  %@", user.name);
+
+            TweetTimelineViewController *tvc = [[TweetTimelineViewController alloc] initWithNibName:@"TweetTimelineViewController" bundle:nil];
+            UINavigationController *nvc = [[UINavigationController alloc]initWithRootViewController:tvc];
+            nvc.navigationBar.translucent = NO;
+            nvc.navigationBar.barTintColor = UIColorFromRGB(0x34AADC);
+            self.window.rootViewController = nvc;
+        
+
+         //self.window.rootViewController = [[TweetsViewController alloc] init];
+    }else {
+        NSLog(@"Not logged in");
+        self.window.rootViewController = [[LoginViewController alloc] init];
+    }
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -46,4 +73,38 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)userDidLogout {
+    self.window.rootViewController = [[LoginViewController alloc] init];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
+    [[TwitterClient sharedInstance] openURL:url];
+//    
+//    [[TwitterClient sharedInstance] fetchAccessTokenWithPath:@"oauth/access_token" method:@"POST" requestToken:[BDBOAuthToken tokenWithQueryString:url.query] success:^(BDBOAuthToken *accessToken) {
+//        NSLog(@"got the access token");
+//        [[TwitterClient sharedInstance].requestSerializer saveAccessToken:accessToken];
+//        [[TwitterClient sharedInstance] GET:@"1.1/account/verify_credentials.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//            //NSLog(@"current user: %@", responseObject);
+//            User *user = [[User alloc] initWithDictionary:responseObject];
+//            NSLog(@"current user name : %@", user.name);
+//        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//            NSLog(@"failed getting current user");
+//        }];
+//        
+//        [[TwitterClient sharedInstance] GET:
+//                                 @"1.1/statuses/home_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//                                     //NSLog(@"tweets: %@", responseObject);
+//                                     NSArray *tweets = [Tweet tweetsWithArray:responseObject];
+//                                     for(Tweet *tweet in tweets) {
+//                                         NSLog(@"tweet : %@, created: %@", tweet.text, tweet.createdAt);
+//                                     }
+//                                 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//                                     NSLog(@"error getting tweets");
+//                                 }];
+//    }failure:^(NSError *error) {
+//        NSLog(@"failed to get the access token");
+//    }];
+    return YES;
+}
 @end
