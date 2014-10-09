@@ -97,6 +97,13 @@ NSString * const kTwitterBaseUrl = @"https://api.twitter.com";
     }];
 }
 
+- (void)pushNewTweetToTimeline:(NSString *)updateTimeline {
+    [self POST:@"1.1/statuses/update.json" parameters:@{@"status" : updateTimeline} success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"update timeline");
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"error");
+    }];
+}
 
 
 @end

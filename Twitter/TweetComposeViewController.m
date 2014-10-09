@@ -16,8 +16,9 @@
 @interface TweetComposeViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *tweetImageView;
 @property (weak, nonatomic) IBOutlet UILabel *tweetHandle;
-
+@property (weak, nonatomic) Tweet* tweet;
 @property (weak, nonatomic) IBOutlet UILabel *tweetName;
+@property (weak, nonatomic) IBOutlet UITextView *tweetTextInput;
 
 @end
 
@@ -66,7 +67,17 @@
     
 }
 
-- (void)onClickTweet:(id)sender {
+- (IBAction)onClickTweet:(id)sender {
+    
+     NSLog(@"in clicktweet");
+    
+    [[TwitterClient sharedInstance] pushNewTweetToTimeline:self.tweetTextInput.text];
+    [self.delegate postTweet:self];
+
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+
     
 }
 

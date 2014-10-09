@@ -88,8 +88,8 @@
                  if(self.tweets.count > 0) {
                      self.tableView.hidden = false;
                  }
-                 [self.refreshControl endRefreshing];
                  [self.tableView reloadData];
+                 [self.refreshControl endRefreshing];
 
              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                  NSLog(@"error getting tweets");
@@ -128,10 +128,12 @@
 
     TweetComposeViewController *tcvc = [[TweetComposeViewController alloc] initWithNibName:@"TweetComposeViewController" bundle:nil];
     tcvc.delegate = self;
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:tcvc];
-    [self presentViewController:nvc animated:YES completion:nil];
+    [self.navigationController pushViewController:tcvc animated:YES];
 }
 
+-(void)postTweet:(TweetComposeViewController *)controller {
+    [self getTweets];
+}
 
 
 @end

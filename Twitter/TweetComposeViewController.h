@@ -12,10 +12,10 @@
 @class TweetComposeViewController;
 
 @protocol TweetComposeViewControllerDelegate <NSObject>
-
+-(void)postTweet:(TweetComposeViewController *)controller;
 @end
 
-@interface TweetComposeViewController : UIViewController
+@interface TweetComposeViewController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, weak) id <TweetComposeViewControllerDelegate> delegate;
 @end
