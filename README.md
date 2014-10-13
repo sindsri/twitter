@@ -15,7 +15,7 @@ Completed user stories
  * [x] User can compose a new tweet by tapping on a compose button.
  * [X] User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
  * [X] In the home timeline, user can view tweet with the user profile picture, username, tweet text, and timestamp. 
- * [X] TODO ---- design the custom cell with the properAuto Layout settings
+ * [X] design the custom cell with the properAuto Layout settings
 
 
 
