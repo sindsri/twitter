@@ -42,7 +42,9 @@
     // Do any additional setup after loading the view from its nib.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 125;
+    //self.tableView.rowHeight = 125;
+    self.tableView.estimatedRowHeight = 120.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     //Add Navigation controls
     
@@ -111,7 +113,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"row  %d selected", indexPath.row);
+    NSLog(@"row  %ld selected", indexPath.row);
     
     [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
     Tweet *tweet = self.tweets[indexPath.row];
