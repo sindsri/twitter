@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>6E804EBB-DDBD-4DC5-8006-21D19B47E7F6</string>
+	<string>3A6741B6-D4C6-4180-984F-F75749B419E2</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Twitter</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>AA569831-81F4-49FA-8554-7C95B46CFF6A</key>
-		<string>https://github.com/sindsri/codepath-twitter.git</string>
+		<key>4FD001B4D0FC4557395A5D1FD628F92CB0EB0042</key>
+		<string>https://github.com/sindsri/twitter.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Twitter.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>AA569831-81F4-49FA-8554-7C95B46CFF6A</key>
+		<key>4FD001B4D0FC4557395A5D1FD628F92CB0EB0042</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/sindsri/codepath-twitter.git</string>
+	<string>https://github.com/sindsri/twitter.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>AA569831-81F4-49FA-8554-7C95B46CFF6A</string>
+	<string>4FD001B4D0FC4557395A5D1FD628F92CB0EB0042</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>AA569831-81F4-49FA-8554-7C95B46CFF6A</string>
+			<string>4FD001B4D0FC4557395A5D1FD628F92CB0EB0042</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Twitter</string>
 		</dict>
