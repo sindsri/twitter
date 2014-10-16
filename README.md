@@ -19,6 +19,8 @@ Profile page
 Home Timeline
   Tapping on a user image should bring up that user's profile page
 
+![Demo](twitter 2.gif)
+
 iOS 7 Twitter client. This app allows you to view the twitter timeline.
 
 Time spent: 25 hours
