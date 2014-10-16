@@ -24,6 +24,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)showUserProfile:(id)sender {
+}
+
+
+- (IBAction)showUserTimeline:(id)sender {
+}
+- (IBAction)showUserMentions:(id)sender {
+}
+
 /*
 #pragma mark - Navigation
 

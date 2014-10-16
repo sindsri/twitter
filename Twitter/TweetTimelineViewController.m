@@ -42,18 +42,18 @@
     // Do any additional setup after loading the view from its nib.
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    //self.tableView.rowHeight = 125;
-    self.tableView.estimatedRowHeight = 120.0;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    //self.tableView.estimatedRowHeight = 120.0;
+    //self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.rowHeight = 125;
     
     //Add Navigation controls
     
     self.navigationItem.title = @"Home";
     [self.navigationController.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-
     
-    //set left and right nav
+    self.navigationController.navigationBar.barTintColor = UIColorFromRGB(0x34AADC);
+
 
     UIBarButtonItem* logOutButton = [[UIBarButtonItem alloc] initWithTitle:@"LogOut" style:UIBarButtonItemStylePlain target:self action:@selector(onClickLogout:)];
     

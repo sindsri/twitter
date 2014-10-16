@@ -13,6 +13,7 @@
 #import "Tweet.h"
 #import "TweetsViewController.h"
 #import "TweetTimelineViewController.h"
+#import "SwipeViewController.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -28,12 +29,13 @@
     if( user != nil) {
         NSLog(@"Welcome  %@", user.name);
 
-            TweetTimelineViewController *tvc = [[TweetTimelineViewController alloc] initWithNibName:@"TweetTimelineViewController" bundle:nil];
-            UINavigationController *nvc = [[UINavigationController alloc]initWithRootViewController:tvc];
-            nvc.navigationBar.translucent = NO;
-            nvc.navigationBar.barTintColor = UIColorFromRGB(0x34AADC);
-            self.window.rootViewController = nvc;
-        
+            //TweetTimelineViewController *tvc = [[TweetTimelineViewController alloc] initWithNibName:@"TweetTimelineViewController" bundle:nil];
+            SwipeViewController *swvc = [[SwipeViewController alloc]initWithNibName:@"SwipeViewController" bundle:nil];
+//            UINavigationController *nvc = [[UINavigationController alloc]initWithRootViewController:swvc];
+//            nvc.navigationBar.translucent = NO;
+//            nvc.navigationBar.barTintColor = UIColorFromRGB(0x34AADC);
+             self.window.rootViewController = swvc;
+//        
 
          //self.window.rootViewController = [[TweetsViewController alloc] init];
     }else {

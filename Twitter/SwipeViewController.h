@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SwipeViewController : UIViewController
 
+@interface SwipeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @end

@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Tweet.h"
+
+@class SideBarViewController;
+
+@protocol SideBarViewControllerDelegate <NSObject>
+@end
 
 @interface SideBarViewController : UIViewController
 
+@property (nonatomic, weak) id <SideBarViewControllerDelegate> delegate;
 @end

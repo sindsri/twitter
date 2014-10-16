@@ -62,7 +62,7 @@ NSString * const kTwitterBaseUrl = @"https://api.twitter.com";
             //for persisting the current user credentials
             
             [User setCurrentUser:user];
-            NSLog(@"current user name : %@", user.name);
+            NSLog(@"current user name : %@", responseObject);
             self.loginCompletion(user, nil);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"failed getting current user");

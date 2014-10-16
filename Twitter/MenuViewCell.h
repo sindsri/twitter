@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MenuViewCell : UIView
+@interface MenuViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *VClabel;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 
 @end
